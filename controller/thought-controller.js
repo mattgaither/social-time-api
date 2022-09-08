@@ -10,7 +10,7 @@ const ThoughtController = {
       });
   },
 
-  //   get thought by Id
+ 
   getThoughtById({ params }, res) {
     Thought.findOne({ _id: params.thoughtId })
       .populate({
@@ -33,11 +33,10 @@ const ThoughtController = {
       });
   },
 
-  //   add thought to user
+ 
   addThought({ params, body }, res) {
     console.log(body);
     Thought.create(body)
-      // get id of the thought
       .then(({ _id }) => {
         return User.findOneAndUpdate(
           { _id: params.userId },
@@ -55,7 +54,7 @@ const ThoughtController = {
       .catch((err) => res.json(err));
   },
 
-  //   create a new thought
+
   createThought({ params, body }, res) {
     Thought.create(body)
       .then(({ _id }) => {
@@ -74,7 +73,7 @@ const ThoughtController = {
       })
       .catch((err) => res.json(err));
   },
-  //   update a thought
+
   updateThought({ params, body }, res) {
     Thought.findOneAndUpdate({ _id: params.thoughtId }, body, {
       new: true,
@@ -95,7 +94,7 @@ const ThoughtController = {
       });
   },
 
-  // add a reaction
+
   addReaction({ params, body }, res) {
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },
@@ -112,7 +111,7 @@ const ThoughtController = {
       .catch((err) => res.json(err));
   },
 
-  //   delete a thought
+
   deleteThought({ params }, res) {
     Thought.findOneAndDelete({ _id: params.thoughtId })
       .then((dbThoughtData) => {
@@ -137,7 +136,7 @@ const ThoughtController = {
       .catch((err) => res.json(err));
   },
 
-  // remove reaction
+
   removeReaction({ params }, res) {
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },

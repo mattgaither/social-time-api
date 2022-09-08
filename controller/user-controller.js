@@ -69,7 +69,7 @@ const UserController = {
     });
   },
 
-  // add a friend - /api/users/:userId/friends/:friendId
+  
   addFriend({ params }, res) {
     User.findOneAndUpdate(
     { _id: params.userId },
