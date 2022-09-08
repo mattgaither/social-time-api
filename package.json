@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "server.js",
-    "watch": "npm run watch"
+    "watch": "nodemon server.js"
   },
   "repository": {
     "type": "git",
