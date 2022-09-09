@@ -4,9 +4,9 @@ const dateFormat = require('../utils/dateFormat');
 
 const ReactionSchema = new Schema(
   {
-    reactionID: {
+    reactionId: {
       type: Schema.Types.ObjectId,
-      default: () => new Types.ObjectId(),
+      ref: "Thought"
     },
     reactionBody: {
       type: String,
@@ -48,7 +48,7 @@ const ThoughtSchema = new Schema(
       type: String,
       required: true,
     },
-    reactions: [
+    reactions: [ 
       ReactionSchema
     ],
   },

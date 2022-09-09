@@ -79,8 +79,8 @@ const UserController = {
     .then((dbUserData) => {
       if (!dbUserData) {
         res.status(404).json({ message: "User not found with this id!" });
-        return;
-      } 
+        
+      } return;
       res.json(dbUserData);
     })
     .catch((err) => res.json(err));
