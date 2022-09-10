@@ -9,7 +9,7 @@
 
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Videolinks] (#videolinks)
+  - [Videolinks](#videolinks)
   - [License](#license)
   - [Contribution](#contribution)
   - [Tests](#tests)
